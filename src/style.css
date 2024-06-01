@@ -6,7 +6,7 @@
   --backgroundTran: rgba(9, 9, 11, 0.1);
   --primary: #1c1917;
   --secondary: ;
-  --accent: #d23b4b;
+  --accent: #eba0ac;
 }
 
 @font-face {
@@ -40,6 +40,9 @@ body {
   overflow-y: auto;
   color: var(--text);
   background-color: var(--background);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #sidebar {
@@ -135,6 +138,7 @@ body {
 }
 
 .sidebarIcon svg {
+  margin-bottom: -3px;
   height: 18px;
   width: 18px;
 }
@@ -144,4 +148,132 @@ body {
   font-family: 'g-regular';
   font-size: 14px;
   text-align: center;
+}
+
+#window {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 196px);
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sectionContainer {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  width: calc(100% - 128px);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+}
+
+.sectionHeader {
+  font-family: 'g-regular';
+  font-size: 2rem;
+}
+
+.sectionTask {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.taskContainer {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--text1);
+  border-radius: 4px;
+  padding: 8px 16px;
+  gap: 12px;
+}
+.taskActions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.taskDoneBtn, .taskEditBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--backgroundTran);
+  border: 1px solid var(--text1);
+  border-radius: 4px;
+  padding: 8px;
+}
+.taskDoneBtn:hover {
+  background-color: var(--text1);
+  border: 1px solid var(--text2);
+}
+.taskEditBtn:hover {
+  background-color: var(--text1);
+  border: 1px solid var(--text2);
+}
+.taskDoneBtn:active {
+  background-color: var(--backgroundTran);
+  border: 1px solid var(--text1);
+}
+.taskEditBtn:active{
+  background-color: var(--backgroundTran);
+  border: 1px solid var(--text1);
+}
+.taskDoneBtn svg, .taskEditBtn svg {
+  width: 14px;
+  height: 14px;
+}
+.taskDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+}
+
+.taskName {
+  font-family: 'g-light';
+  font-size: 1rem;
+}
+
+.taskDesc {
+  font-family: 'g-light';
+  font-size: 0.8rem;
+}
+
+.taskDate {
+  font-family: 'g-light';
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.taskLabel {
+  font-family: 'g-light';
+  font-size: 1rem;
+}
+
+#taskFormContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+}
+#taskForm {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#taskFormClose {
+  position: absolute;
+  top: 32px;
+  right: 32px;
 }
