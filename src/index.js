@@ -40,7 +40,6 @@ function CreateTask(id, name, desc, date, label) {
 
 function parseDate(date) {
   date.toString();
-  // date format: DD-MM-YYYY
   let dd = date.slice(0, 2);
   let mm = date.slice(2, 4);
   let yy = date.slice(4);
